@@ -5,12 +5,7 @@ from types import MethodType
 from django.db.models.fields import FieldDoesNotExist
 from django.utils.text import capfirst
 from django.utils.functional import LazyObject, new_method_proxy
-try:
-    # New in Django 1.7+
-    from django.utils.text import camel_case_to_spaces
-except ImportError:
-    # Backwards compatibility
-    from django.db.models.options import get_verbose_name as camel_case_to_spaces
+from django.utils.text import camel_case_to_spaces as get_verbose_name
 from django.conf import settings
 from mongoengine.fields import ReferenceField, ListField
 
